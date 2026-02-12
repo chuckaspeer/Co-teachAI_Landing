@@ -14,7 +14,7 @@ const blocks = [
     title: "Bell Ringers",
     body: "Start class with purpose. Standards-aligned prompts designed for spiraling review, with immediate feedback and grading you control.",
     imageLabel: "Bell ringers in Co-TeachAI",
-    imageSrc: "/images/bellringlogo.png",
+    imageSrc: "/images/bellringerstudent.png",
   },
   {
     id: "exit-tickets",

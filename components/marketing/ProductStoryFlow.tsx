@@ -26,7 +26,7 @@ const blocks = [
   {
     id: "student-tutor",
     title: "Student Tutor",
-    body: "Built on the Socratic method, the tutor guides students through objective-aligned questions instead of giving answers. You can review every interaction.",
+    body: "Built on the Socratic method, the tutor guides students through objective-aligned questions instead of giving answers. Teachers can limit sessions to specific standards and Student Expectations (SEs), and you can review every interaction.",
     imageLabel: "Student tutor in Co-TeachAI",
     imageSrc: "/images/tutorlogo.png",
   },

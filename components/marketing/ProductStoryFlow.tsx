@@ -5,7 +5,7 @@ const blocks = [
   {
     id: "lesson-planning",
     title: "Lesson Planning",
-    body: "Generate standards-aligned lesson plans, adjust objectives and pacing, and organize each phase of instruction with clarity.",
+    body: "Generate standards-aligned lesson plans, connect each objective to your Year-at-a-Glance (YAG), align pacing to specific standards and learning targets, and organize every phase of instruction with clarity.",
     imageLabel: "Lesson planning in Co-TeachAI",
     imageSrc: "/images/lessonplanlogo.png",
   },

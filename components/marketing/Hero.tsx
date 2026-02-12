@@ -53,7 +53,7 @@ export function Hero() {
                 gap: "1rem",
               }}
             >
-              <Button href="/pilot" className="cta-primary-btn">
+              <Button href="/#request-access" className="cta-primary-btn">
                 Request Access
               </Button>
               <Button href="/demo" variant="secondary" className="cta-secondary-btn">

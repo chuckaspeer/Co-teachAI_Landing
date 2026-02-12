@@ -5,7 +5,7 @@ const footerLinks = [
   { href: "#how-it-works", label: "How it works" },
   { href: "#trust", label: "Trust" },
   { href: "#for-schools", label: "For Schools" },
-  { href: "/pilot", label: "Request Access" },
+  { href: "/#request-access", label: "Request Access" },
 ];
 
 export function Footer() {

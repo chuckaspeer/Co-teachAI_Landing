@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 export function FinalCta() {
   return (
     <section
+      id="request-access"
       aria-labelledby="final-cta-heading"
       style={{
         paddingTop: "3rem",
@@ -30,7 +31,7 @@ export function FinalCta() {
             justifyContent: "center",
           }}
         >
-          <Button href="/pilot" className="cta-primary-btn">
+          <Button href="/#request-access" className="cta-primary-btn">
             Request Access
           </Button>
           <Button href="/demo" variant="secondary" className="cta-secondary-btn">

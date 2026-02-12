@@ -66,7 +66,7 @@ export function TopNav() {
               {link.label}
             </Link>
           ))}
-          <Button href="/pilot" className="nav-request-access-btn">
+          <Button href="/#request-access" className="nav-request-access-btn">
             Request Access
           </Button>
         </nav>
@@ -123,7 +123,7 @@ export function TopNav() {
           </Link>
         ))}
         <div style={{ marginTop: "0.75rem" }}>
-          <Button href="/pilot" className="nav-request-access-btn">
+          <Button href="/#request-access" className="nav-request-access-btn">
             Request Access
           </Button>
         </div>

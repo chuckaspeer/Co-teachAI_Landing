@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 713a405ab796abbcb2d93cd34cceb8afa07a271e Brian <chuckaspeer@gmail.com> 1770781868 -0600	commit (initial): Remove .env.local from tracking
+713a405ab796abbcb2d93cd34cceb8afa07a271e c6046d739e5ec9c528e729a0eba904a6f860aa44 Brian <chuckaspeer@gmail.com> 1770781902 -0600	commit: Remove node_modules from tracking
+c6046d739e5ec9c528e729a0eba904a6f860aa44 848ca0043ac86b6a0a1faba2c4cf25d6f5ee35cb Brian <chuckaspeer@gmail.com> 1770782025 -0600	commit: Add gitignore
+848ca0043ac86b6a0a1faba2c4cf25d6f5ee35cb da56001eb82a673d3f765925e5f0452074be8c3f Brian <chuckaspeer@gmail.com> 1770782040 -0600	commit: Stop tracking Next.js build output
+da56001eb82a673d3f765925e5f0452074be8c3f 489337a355fde61411215c47844ec8a2b1a9a7b2 Brian <chuckaspeer@gmail.com> 1770856766 -0600	commit: text and button updates

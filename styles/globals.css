@@ -1,0 +1,256 @@
+:root {
+  --brand-teal: #0d9488;
+  --brand-teal-dark: #0f766e;
+  --brand-purple: #7c3aed;
+  --brand-purple-dark: #6d28d9;
+  /* Reusable brand tokens (aligned with logo/theme) */
+  --brand-primary: #0d9488;
+  --brand-accent: #7c3aed;
+  --brand-dark: #0f766e;
+  /* Button background: darker teal for AA contrast with white text (4.5:1+) */
+  --brand-primary-button: #0f766e;
+  --brand-primary-button-hover: #0d5d57;
+  --bg: #ffffff;
+  --bg-muted: #f8fafc;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --border-focus: var(--brand-primary);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  color: var(--brand-teal);
+  border: 2px solid var(--brand-teal);
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+  outline: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* TopNav responsive */
+@media (max-width: 767px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .nav-toggle {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) {
+  .nav-mobile-menu {
+    display: none !important;
+  }
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
+/* Header "Request Access" button – logo gradient, nav size only */
+.nav-request-access-btn {
+  background: linear-gradient(to right, #1C8F9A, #6B3FD6);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.15s ease;
+}
+.nav-request-access-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.nav-request-access-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #2F3C8F;
+  outline-offset: 2px;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.promise-grid,
+.diff-mastery-grid,
+.who-grid {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .promise-grid,
+  .who-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .diff-mastery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product-block {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .product-block {
+    grid-template-columns: 1fr 1fr;
+  }
+  .product-block:nth-child(even) .product-block-content {
+    order: 2;
+  }
+  .product-block:nth-child(even) .product-block-image {
+    order: 1;
+  }
+}
+
+/* CTA buttons – brand colors, AA contrast, consistent with logos */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  text-decoration: none;
+}
+.btn-base:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+.btn-base:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-primary {
+  background-color: var(--brand-primary-button);
+  color: #ffffff;
+  border-color: var(--brand-primary-button);
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--brand-primary-button-hover);
+  border-color: var(--brand-primary-button-hover);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+}
+.btn-secondary:disabled {
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+/* CTA section only – logo-matching gradient and purple outline */
+.cta-primary-btn {
+  background: linear-gradient(to right, #1C8F9A, #6B3FD6);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+}
+.cta-primary-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.cta-primary-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #2F3C8F;
+  outline-offset: 2px;
+}
+
+.cta-secondary-btn {
+  color: #6B3FD6;
+  border-color: #6B3FD6;
+}
+.cta-secondary-btn:hover:not(:disabled) {
+  background-color: #6B3FD6;
+  color: #ffffff;
+}
+.cta-secondary-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #6B3FD6;
+  outline-offset: 2px;
+}

@@ -1,6 +1,32 @@
-import { Button } from "@/components/ui/Button";
+"use client";
+
+import { useEffect, useState } from "react";
+import { RequestAccessForm } from "@/components/marketing/RequestAccessForm";
+
+function isRequestAccessHash() {
+  if (typeof window === "undefined") return false;
+  return window.location.hash === "#request-access";
+}
 
 export function FinalCta() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(isRequestAccessHash());
+    const onHashChange = () => setOpen(isRequestAccessHash());
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      const target = (e.target as Element).closest('a[href*="#request-access"]');
+      if (target) setOpen(true);
+    };
+    document.addEventListener("click", handler);
+    return () => document.removeEventListener("click", handler);
+  }, []);
+
   return (
     <section
       id="request-access"
@@ -12,32 +38,63 @@ export function FinalCta() {
       }}
     >
       <div className="container">
-        <h2
-          id="final-cta-heading"
-          style={{
-            fontSize: "1.5rem",
-            fontWeight: 700,
-            marginTop: 0,
-            marginBottom: "1.5rem",
-          }}
+        <details
+          open={open}
+          onToggle={(e) => setOpen((e.target as HTMLDetailsElement).open)}
+          style={{ textAlign: "left" }}
         >
-          Bring Co-TeachAI to Your School
-        </h2>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "1rem",
-            justifyContent: "center",
-          }}
-        >
-          <Button href="/#request-access" className="cta-primary-btn">
-            Request Access
-          </Button>
-          <Button href="/demo" variant="secondary" className="cta-secondary-btn">
-            Schedule a Walkthrough
-          </Button>
-        </div>
+          <summary
+            id="final-cta-heading"
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: 700,
+              marginTop: 0,
+              marginBottom: 0,
+              cursor: "pointer",
+              textAlign: "center",
+            }}
+          >
+            Bring Co-TeachAI to Your School
+            {!open && (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "1rem",
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <a
+                  href="/#request-access"
+                  className="cta-primary-btn btn-base"
+                  onClick={() => setOpen(true)}
+                >
+                  Request Access
+                </a>
+              </div>
+            )}
+          </summary>
+          <div style={{ marginTop: "1.5rem" }}>
+            <RequestAccessForm />
+            {open && (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "1.5rem",
+                }}
+              >
+                <a
+                  href="/#request-access"
+                  className="cta-primary-btn btn-base"
+                  onClick={() => setOpen(true)}
+                >
+                  Request Access
+                </a>
+              </div>
+            )}
+          </div>
+        </details>
       </div>
     </section>
   );

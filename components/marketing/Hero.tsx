@@ -56,9 +56,6 @@ export function Hero() {
               <Button href="/#request-access" className="cta-primary-btn">
                 Request Access
               </Button>
-              <Button href="/demo" variant="secondary" className="cta-secondary-btn">
-                Schedule a Walkthrough
-              </Button>
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>

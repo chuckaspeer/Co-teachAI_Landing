@@ -25,8 +25,16 @@ export function Button({
   const classes = `${base} ${variants[variant]} ${className}`.trim();
 
   if ("href" in props && props.href) {
+    const href = props.href;
+    if (href.includes("#")) {
+      return (
+        <a href={href} className={classes}>
+          {props.children}
+        </a>
+      );
+    }
     return (
-      <Link href={props.href} className={classes}>
+      <Link href={href} className={classes}>
         {props.children}
       </Link>
     );

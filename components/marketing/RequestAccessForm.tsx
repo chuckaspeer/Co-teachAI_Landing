@@ -70,20 +70,23 @@ export function RequestAccessForm() {
     setStatus("loading");
 
     try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: state.type,
-          name: state.name.trim(),
-          email: state.email.trim(),
-          school: state.school.trim() || undefined,
-          district: state.district.trim() || undefined,
-          role: state.role.trim() || undefined,
-          message: state.message.trim() || undefined,
-          honeypot: state.honeypot,
-        }),
-      });
+      const res = await fetch(
+        "https://co-teachai-leads.chuckaspeer.workers.dev/leads",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            type: state.type,
+            name: state.name.trim(),
+            email: state.email.trim(),
+            school: state.school.trim() || undefined,
+            district: state.district.trim() || undefined,
+            role: state.role.trim() || undefined,
+            message: state.message.trim() || undefined,
+            honeypot: state.honeypot,
+          }),
+        }
+      );
       const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {
